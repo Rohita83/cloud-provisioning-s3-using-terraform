@@ -11,6 +11,14 @@ provider "aws" {
   region = var.aws_region
 }
 
+terraform {
+  backend "s3" {
+    bucket = "wo-test-bucket-1"
+    key    = "PROJECT-COMPONENT-terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 module "s3" {
   source = "./modules/aws/s3"
   bucket_name = var.bucket_name
