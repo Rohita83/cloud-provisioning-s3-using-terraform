@@ -59,4 +59,10 @@ variable "key_name" {
    default = "wo_kp"
 }
 
+variable "aws_env" {
+  description = "AWS env"
+  type        = string
+  default     = "dev"
+}
+
 
